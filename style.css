@@ -89,6 +89,9 @@ main .text-image .bottom .services .service p {
   font-weight: 400;
 }
 main .vertical-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
   padding-top: 1em;
   width: 100%;
 }
@@ -101,6 +104,33 @@ main .vertical-text .top img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+main .vertical-text .bottom {
+  display: flex;
+  gap: 2.3em;
+}
+main .vertical-text .bottom p {
+  padding-top: 0.7em;
+  writing-mode: vertical-lr;
+  font-size: 0.7em;
+  font-weight: 500;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+main .vertical-text .bottom .text h1 {
+  font-size: 3em;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1em;
+  opacity: 0.9;
+}
+main .vertical-text .bottom .text p {
+  writing-mode: initial;
+  text-transform: initial;
+  font-family: monospace;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  opacity: 0.7;
 }
 
 @media (min-width: 900px) {
@@ -130,5 +160,35 @@ main .vertical-text .top img {
   }
   main .text-image .bottom .services .service p {
     font-size: 2em;
+  }
+  main .vertical-text {
+    flex-direction: row;
+  }
+  main .vertical-text .top {
+    width: 30%;
+    aspect-ratio: 1/1;
+  }
+  main .vertical-text .bottom {
+    width: 70%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  main .vertical-text .bottom p {
+    font-size: 0.7em;
+    padding-top: 3krem;
+  }
+  main .vertical-text .bottom .text {
+    width: 70%;
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+  }
+  main .vertical-text .bottom .text h1 {
+    font-size: 6em;
+  }
+  main .vertical-text .bottom .text p {
+    width: 80%;
+    margin-top: auto;
+    opacity: 0.5;
   }
 }/*# sourceMappingURL=style.css.map */

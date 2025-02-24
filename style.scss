@@ -90,51 +90,114 @@ main {
     }
   }
 
-  .vertical-text{
+  .vertical-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
     padding-top: 1em;
     width: 100%;
-    .top{
+    .top {
+      width: 100%;
+      aspect-ratio: 1/1;
+      img {
+        height: 100%;
         width: 100%;
-        aspect-ratio: 1/1;
-        img{
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
+        object-fit: cover;
+      }
     }
-    
+    .bottom{
+      display: flex;
+      gap: 2.3em;
+      p{
+        padding-top: 0.7em;
+        writing-mode: vertical-lr;
+        font-size: 0.7em;
+        font-weight: 500;
+        opacity: 0.7;
+        text-transform: uppercase;
+      }
+      .text{
+        h1{
+          font-size: 3em;
+          font-weight: 400;
+          text-transform: uppercase;
+          line-height: 1em;
+          opacity: 0.9;
+
+        }
+        p{
+          writing-mode: initial;
+          text-transform: initial;
+          font-family: monospace;
+          font-size: 1.5em;
+          line-height: 1.5em;
+          opacity: 0.7;
+        }
+      }
+    }
   }
 }
 
-@media (min-width:900px){
-    main{
-        padding: 3rem;
+@media (min-width: 900px) {
+  main {
+    padding: 3rem;
 
-        .text-image{
-            flex-direction: row-reverse;
-            gap: 4em;
-            .bottom{
-                padding-top: 2em;
-                padding-bottom: 2em;
-                h1{
-                    font-size: 5em;
-                    opacity: 1;
-                    letter-spacing: 0.01em;
-                }
-                p{
-                    font-size: 1.9em;
-                    letter-spacing: 0.01em;
-                    line-height: 1.5;
-                }
-                .services{
-                    margin-top: auto;
-                    .service{
-                        p{
-                            font-size: 2em;
-                        }
-                    }
-                }
-            }
+    .text-image {
+      flex-direction: row-reverse;
+      gap: 4em;
+      .bottom {
+        padding-top: 2em;
+        padding-bottom: 2em;
+        h1 {
+          font-size: 5em;
+          opacity: 1;
+          letter-spacing: 0.01em;
         }
+        p {
+          font-size: 1.9em;
+          letter-spacing: 0.01em;
+          line-height: 1.5;
+        }
+        .services {
+          margin-top: auto;
+          .service {
+            p {
+              font-size: 2em;
+            }
+          }
+        }
+      }
     }
+    .vertical-text{
+      flex-direction: row;
+
+      .top{
+        width: 30%;
+        aspect-ratio: 1/1;
+      }
+      .bottom{
+        width: 70%;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        p{
+          font-size: 0.7em;
+          padding-top: 3krem;
+        }
+        .text{
+          width: 70%;
+          padding: 3em;
+          display: flex;
+          flex-direction: column;
+          h1{
+            font-size: 6em;
+          }
+          p{
+            width: 80%;
+            margin-top: auto;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
 }
